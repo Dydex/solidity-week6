@@ -3,6 +3,7 @@ pragma solidity ^0.8.3;
 
 import {ERC20Token} from "./ERC20Token.sol";
 
+
 contract PropertyManagement {
     
     ERC20Token public erc20Token;
@@ -63,10 +64,11 @@ contract PropertyManagement {
 
     
     function PurchaseProperty(uint _propertyId, uint _price) external {
-        require(properties[i].isForSale, "Property is not for sale");
-        require(properties[i].price == _price, "Price Mismatch");
+        require(_propertyId > 0 && _propertyId <= properties.length, "Invalid ID" );
+        require(properties[_propertyId].isForSale, "Property is not for sale");
+        require(properties[_propertyId].Price == _price, "Price Mismatch");
 
-        for (uint i = 0; i < properties.lengt; i++){
+        for (uint i = 0; i < properties.length; i++){
             if(properties[i].PropertyId == _propertyId){
                 properties[i].isForSale = false;
             }

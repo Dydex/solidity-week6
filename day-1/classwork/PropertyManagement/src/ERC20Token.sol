@@ -10,7 +10,7 @@ contract ERC20Token is ERC20 {
 
     function mint(uint amount)external {
 
-        _mint(msg.sender, uint amount);
+        _mint(msg.sender, amount);
         
     }
 }
