@@ -1,12 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
+import {ERC20Token} from "./ERC20Token.sol";
+
 contract PropertyManagement {
+    
+    ERC20Token public erc20Token;
+    address public owner; 
 
-    address public owner;
-
-
-    constructor() {
+    constructor(address _tokenAddress) {
+        erc20Token = ERC20Token(_tokenAddress);
         owner = msg.sender;
     }
 
@@ -44,10 +47,10 @@ contract PropertyManagement {
     }
 
     function RemoveProperty(uint _propertyId) external onlyOwner {
-        // require(_propertyId > 0 && <= propertyCount, "Property Not Found");
+        
         for (uint i = 0; i < properties.length; i++){
             if(properties[i].PropertyId == _propertyId){
-                properties[i] = properties[properties.length - 1]
+                properties[i] = properties[properties.length - 1];
 
                 properties.pop();
             }
@@ -69,7 +72,7 @@ contract PropertyManagement {
             }
         }
 
-        ERC20Token.transferFrom(msg.sender, address(this), _price);
+        erc20Token.transferFrom(msg.sender, address(this), _price);
 
     }
 }
