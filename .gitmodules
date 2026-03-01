@@ -1,0 +1,3 @@
+[submodule "day-5/classwork/OnchainNft/lib/openzeppelin-contracts"]
+	path = day-5/classwork/OnchainNft/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
