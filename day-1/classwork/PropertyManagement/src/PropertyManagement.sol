@@ -58,7 +58,7 @@ contract PropertyManagement {
         }
     }
 
-    function GetAllProperties() external returns (Property[] memory) {
+    function GetAllProperties() external view returns (Property[] memory) {
         return properties;
     }
 

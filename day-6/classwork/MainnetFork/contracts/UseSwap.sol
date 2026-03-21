@@ -94,4 +94,17 @@ contract UseSwap {
         liquidityCount += 1;
     }
 
+    function handleRemoveLiquidity(
+        address tokenA,
+        address tokenB,
+        uint liquidity,
+        uint amountAMin,
+        uint amountBMin,
+        address to,
+        uint deadline
+    ) external {
+        IERC20
+    }
+    
+
 }

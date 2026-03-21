@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Script} from "forge-std/Script.sol";
 import {PropertyManagement} from "../src/PropertyManagement.sol";
 
-contract PropertyManagement is Script {
+contract PropertyManagementScript is Script {
     PropertyManagement public propertymangement;
 
     function setUp() public {}
@@ -12,7 +12,7 @@ contract PropertyManagement is Script {
     function run() public {
         vm.startBroadcast();
 
-        propertymangement = new PropertyManagement();
+        propertymangement = new PropertyManagement(msg.sender);
 
         vm.stopBroadcast();
     }
